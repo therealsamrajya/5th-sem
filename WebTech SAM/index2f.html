@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Events Example</title>
+    <script>
+        // Window Event
+        window.onload = function() {
+            alert('The page has loaded!');
+        };
+
+        window.onresize = function() {
+            document.getElementById('resize-info').innerHTML = 'Window resized!';
+        };
+
+        // Keyboard Event
+        document.onkeydown = function(event) {
+            alert('Key pressed: ' + event.key);
+        };
+
+        // Mouse Event
+        document.getElementById('my-button').onclick = function() {
+            alert('Button clicked!');
+        };
+
+        document.getElementById('my-div').onmouseover = function() {
+            document.getElementById('mouse-info').innerHTML = 'Mouse over the div!';
+        };
+
+        // Form Element Event
+        function showValue() {
+            var inputElement = document.getElementById('text-input');
+            var value = inputElement.value;
+            alert('Input value: ' + value);
+        }
+    </script>
+</head>
+<body>
+    <h1>HTML Events Example</h1>
+    
+    <!-- Window Event -->
+    <div id="resize-info"></div>
+
+    <!-- Keyboard Event -->
+    <p>Press any key to trigger the event.</p>
+
+    <!-- Mouse Event -->
+    <div id="my-div">Hover over me</div>
+    <p id="mouse-info"></p>
+    <button id="my-button">Click me</button>
+
+    <!-- Form Element Event -->
+    <input type="text" id="text-input" placeholder="Type something...">
+    <button onclick="showValue()">Show Value</button>
+</body>
+</html>
