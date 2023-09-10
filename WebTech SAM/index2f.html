@@ -2,6 +2,25 @@
 <html>
 <head>
     <title>HTML Events Example</title>
+</head>
+<body>
+    <h1>HTML Events Example</h1>
+    
+    <!-- Window Event -->
+    <div id="resize-info"></div>
+
+    <!-- Keyboard Event -->
+    <p>Press any key to trigger the event.</p>
+
+    <!-- Mouse Event -->
+    <div id="my-div">Hover over me</div>
+    <p id="mouse-info"></p>
+    <button id="my-button">Click me</button>
+
+    <!-- Form Element Event -->
+    <input type="text" id="text-input" placeholder="Type something...">
+    <button onclick="showValue()">Show Value</button>
+
     <script>
         // Window Event
         window.onload = function() {
@@ -33,23 +52,5 @@
             alert('Input value: ' + value);
         }
     </script>
-</head>
-<body>
-    <h1>HTML Events Example</h1>
-    
-    <!-- Window Event -->
-    <div id="resize-info"></div>
-
-    <!-- Keyboard Event -->
-    <p>Press any key to trigger the event.</p>
-
-    <!-- Mouse Event -->
-    <div id="my-div">Hover over me</div>
-    <p id="mouse-info"></p>
-    <button id="my-button">Click me</button>
-
-    <!-- Form Element Event -->
-    <input type="text" id="text-input" placeholder="Type something...">
-    <button onclick="showValue()">Show Value</button>
 </body>
 </html>
