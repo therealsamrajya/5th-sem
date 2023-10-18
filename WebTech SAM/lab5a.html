@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .button {
+            background-color: lightblue;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .input-area {
+            width: 200px;
+            padding: 10px;
+        }
+
+        .div-mouse {
+            width: 200px;
+            height: 100px;
+            background-color: lightgreen;
+            margin-top: 10px;
+        }
+
+        .textarea {
+            width: 300px;
+            height: 100px;
+            background-color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button class="button" onclick="changeText()">OnClickEvent</button>
+    <span id="spanContent">I am span!</span>
+    
+    <br><br>
+    
+    <div>
+        Enter your name:
+        <input type="text" class="input-area" placeholder="Type your name" oninput="changeInputText(this.value)">
+    </div>
+    
+    <br>
+    
+    <div class="div-mouse" onmouseover="changeDivColor(true)" onmouseout="changeDivColor(false)">
+        Mouse Over and Out
+    </div>
+    
+    <div class="div-mouse" onmousedown="changeDivProperties(true)" onmouseup="changeDivProperties(false)">
+        Mouse Down and Up
+    </div>
+    
+    <br>
+    
+    <div>
+        Write about yourself:
+        <textarea class="textarea" placeholder="Write here...." onfocus="focusTextArea()" onblur="blurTextArea()"></textarea>
+    </div>
+
+    <script>
+        function changeText() {
+            const spanContent = document.getElementById('spanContent');
+            spanContent.innerText = "Button Clicked!";
+        }
+
+        function changeInputText(value) {
+            console.log(value); 
+        }
+        function changeDivColor(over) {
+            const div = event.target;
+            if (over) {
+                div.style.backgroundColor = "lightblue";
+            } else {
+                div.style.backgroundColor = "lightgreen";
+            }
+        }
+
+        function changeDivProperties(down) {
+            const div = event.target;
+            if (down) {
+                div.style.backgroundColor = "red";
+            } else {
+                div.style.backgroundColor = "lightgreen";
+            }
+        }
+
+        function focusTextArea() {
+            const textarea = event.target;
+            textarea.style.border = "2px solid blue";
+        }
+
+        function blurTextArea() {
+            const textarea = event.target;
+            textarea.style.border = "none";
+        }
+    </script>
+</body>
+</html>

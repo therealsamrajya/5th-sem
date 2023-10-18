@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Five Integers</title>
+</head>
+<body>
+    <script>
+        // Initialize variables for the sum
+        var sumFor = 0;
+        var sumWhile = 0;
+        var count = 0;
+
+        // Use a for loop to input five integers and calculate the sum
+        for (var i = 0; i < 5; i++) {
+            var num = parseInt(prompt("Enter an integer (using for loop):"));
+            if (!isNaN(num)) {
+                sumFor += num;
+            } else {
+                alert("Invalid input. Please enter a valid integer.");
+                i--; // Decrement i to repeat the current iteration
+            }
+        }
+
+        // Use a while loop to input five integers and calculate the sum
+        while (count < 5) {
+            var num = parseInt(prompt("Enter an integer (using while loop):"));
+            if (!isNaN(num)) {
+                sumWhile += num;
+                count++;
+            } else {
+                alert("Invalid input. Please enter a valid integer.");
+            }
+        }
+
+        // Display the sums in the browser window
+        document.write("<p>Sum (using for loop): " + sumFor + "</p>");
+        document.write("<p>Sum (using while loop): " + sumWhile + "</p>");
+    </script>
+</body>
+</html>
